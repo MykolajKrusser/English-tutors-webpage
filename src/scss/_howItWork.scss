@@ -1,0 +1,31 @@
+#section00{
+    flex-direction: column;
+    text-align: center;
+    margin-top: 100px;
+    .blocks{
+        @include center;
+        div{
+            width: 50%;
+            margin: 20px;
+            padding: 5%;
+            box-shadow: 0 4px 30px -5px rgba(#000, 0.2);
+            &:nth-child(2n){
+                background: $liteBg;
+            }
+            img,h3,p{
+                margin: 15px;
+            }
+        }
+    }
+}
+
+/*** Responsive For Smaller Device ***/
+
+@media screen and (max-width: 767px) {
+    #section00 .blocks{
+        flex-direction: column;
+    }
+    #section00 .blocks div{
+        width: 100%;
+    }
+}

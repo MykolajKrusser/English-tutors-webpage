@@ -1,0 +1,105 @@
+#faq{
+    @include center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.hide{
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .accordion{
+    background: #fff;
+    width: 70%;
+    height: 100;
+    border: 1px solid $border-color;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+    box-shadow: 0 4px 30px -5px rgba(#000, 0.2);
+    li{
+      margin-left: 0;
+    }
+  }
+  
+  .accordion-item{
+      position: relative;
+      width: 100%;
+    border-bottom: 1px solid $border-color;
+    
+      &:last-child{
+          border-bottom: none;
+      }
+  
+  }
+  
+  .accordion-label{
+      padding: 20px 0 20px 30px;
+      width: 100%;
+      display: block;
+    font-size: 18px;
+    
+    &:hover{
+      cursor: pointer;
+    }
+  
+      &:before{
+      content: '';
+      position: absolute;
+      height: 5px;
+      width: 5px;
+      top: 22px;
+      left: 12px;
+      display: inline-block;
+      border-left: 5px solid #999;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      }
+  
+      input[type=checkbox]:checked ~ &:before{
+          transform: rotate(90deg);
+      }
+  }
+  
+  .accordion-child{
+    @include center;
+    flex-direction: column;
+    margin: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+    height: 0;
+    transform: scale(1,0);
+    transform-origin: center top;
+    li{
+      list-style: square outside;
+      margin-right: auto;
+    }
+    
+      input[type=checkbox]:checked ~ &{
+  
+      border: 1px solid $border-color;
+      margin: 0 -20px 15px -20px;
+      background: #fff;
+      box-shadow: 0 3px 6px 1px rgba(0,0,0,0.16);
+        padding: 30px;
+      
+      height: auto;
+      opacity: 1;
+      transform: scale(1,1);
+      
+    }
+  }
+
+/*** Responsive Menu For Smaller Device ***/
+
+@media screen and (max-width: 767px) {
+  .accordion{
+    width: 90%;
+  }
+
+}

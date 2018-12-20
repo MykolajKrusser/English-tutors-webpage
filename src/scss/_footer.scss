@@ -1,0 +1,30 @@
+footer{
+    @include center;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 30vh;
+    min-width: 100vw;
+    background: #282828;
+    color: white;
+    a{
+        color: #7E7E7E;
+    }
+    .info-footer{
+        @include center;
+        justify-content: space-around;
+        width: 100%;
+        border-bottom:1px solid #7E7E7E;
+        padding-bottom: 20px;
+        div{
+            flex-direction: column;
+            @include center;
+            justify-content: space-around;
+            margin-bottom: auto;
+            h4,a{
+                margin: 5px 10px;
+                text-align: center;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,66 @@
+<% var data = {
+  title: "Репетитор англійської мови",
+  author: "Krusser"
+}; %>
+<%= _.template(require('./../includes/headerWithLinks.html'))(data) %>
+
+<section id="faq">
+  <h2>
+    ЗАПИТАННЯ / ВІДПОВІДІ
+  </h2>
+  <ul class="accordion">
+    <li class="accordion-item">
+      <input id="s1" class="hide" type="checkbox" checked>
+      <label for="s1"class="accordion-label">Гарантія високих результатів і якості?</label>
+      <ul class="accordion-child">
+        <li>Плюс 40% додатково до існуючого рівня знань по предмету</li>
+        <li>Багаторічний, успішний досвід підготовки</li>
+        <li>Бездоганна репутація</li>
+     </ul>
+    </li>
+    <li class="accordion-item">
+      <input id="s2" class="hide" type="checkbox">
+      <label for="s2" class="accordion-label">Які методи навчання та комунікацій?</label>
+      <ul class="accordion-child">
+        <li>Сучасні методики викладання</li>
+        <li>Талановиті і зацікавлені педагоги</li>
+        <li>Ненудні заняття</li>
+        <li>Оперативна допомога з будь-яких питань</li>
+      </ul>
+    </li>
+    <li class="accordion-item">
+      <input id="s3" class="hide" type="checkbox">
+      <label for="s3" class="accordion-label">Як складається програма навчання?</label>
+      <ul class="accordion-child">
+        <li>Ретельна оцінка існуючого рівня знань</li>
+        <li>Розробка персонального плану занять з урахуванням побажань та індивідуальних особливостей</li>
+        <li>Дбайливе ставлення до учнів і їх батьків</li>
+      </ul>
+    </li>
+    <li class="accordion-item">
+      <input id="s4" class="hide" type="checkbox">
+      <label for="s4" class="accordion-label">Хто відповідальний за програму навчання?</label>
+      <ul class="accordion-child">
+        <p>
+          Команда викладачив повністю бере на себе відповідальність
+           за заняття і піклується про все і про всіх.
+        </p>
+      </ul>
+    </li>
+    <li class="accordion-item">
+        <input id="s5" class="hide" type="checkbox">
+        <label for="s5" class="accordion-label">Де проходять заняття?</label>
+        <ul class="accordion-child">
+          <p>
+            Заняття проходять у замовника на дому в зручний час,
+             або у нас в спеціально підготовленому класі в <a href="https://goo.gl/maps/XGfogezEdTS2">школа №17 м. Черкас</a>.
+          </p>
+          <p>
+              Заняття проходять за гнучким, комфортному саме для вас графіком, в зручній і безпечній обстановці.
+          </p>
+        </ul>
+      </li>
+  </ul>
+</section>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>

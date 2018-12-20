@@ -1,0 +1,26 @@
+#section01{
+    flex-direction: column;
+    text-align: center;
+    margin-top: 100px;
+    .person{
+        @include center;
+        width: 50%;
+        margin: 20px auto;
+        padding: 5%;
+        box-shadow: 0 4px 30px -5px rgba(#000, 0.2);
+        img,h3,p{
+            margin: 15px;
+        }
+        img{
+            border-radius: 50%;
+        }
+    }
+}
+
+/*** Responsive For Smaller Device ***/
+
+@media screen and (max-width: 767px) {
+    #section01 .person{
+        width: 100%;
+    }
+}

@@ -1,0 +1,276 @@
+$font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+
+/*** Color Variables ***/
+$header-bg: #ffffff;
+$nav-bg: #ffffff;
+$aqua: #79edfc;
+$accent: #fff;
+$grey: rgb(87, 83, 83);
+$liteBg: #ecf7fb;
+$border-color: #e0e0e0;
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+/*** Mixins & Default Styles ***/
+@mixin object($width, $height, $bg) {
+  width: $width;
+  height: $height;
+  background: $bg;
+}
+@mixin transPos($top, $right, $bottom, $left,$transX,$transY) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  transform: translate($transX, $transY);
+}
+*,*:before,*:after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+h1,h2,h3{
+    color: $grey;
+    margin: 25px 0;
+}
+p{
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+/*** Centering Hack ***/
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*** Header Styles ***/
+header {
+  @include object(100vw,100vh,$header-bg);
+  display: flex;
+}
+
+/*** Navigation Styles ***/
+nav {
+  @include object(100vw,160px,$nav-bg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: fixed;
+  z-index: 10;
+  color: $grey;
+  box-shadow: 0 4px 30px -5px rgba(#000, 0.2);
+  transition: all 0.3s;
+  &.navShadow {
+      height: 99px;
+      border-bottom: 1px solid $aqua;
+      #word-mark {
+          opacity: 0;
+      }
+  }
+}
+
+#brand,
+#menu,
+ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+#brand {
+  padding-left: 40px;
+}
+
+#logo {
+  @include object(65px,65px,$accent);
+  cursor: pointer;
+  background: url(../favicon/favicon.ico)
+}
+
+#word-mark {
+  @include object(30%,null,$accent);
+  margin-left: 20px;
+  opacity: 1;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+/*** Menu Styles ***/
+#menu {
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+
+li {
+  margin-left: 20px;
+  a {
+      @include object(null,null,$accent);
+      display: block;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $grey;
+      text-align: center;
+      border: 1px solid white;
+      transition: all 0.3s cubic-bezier(.645,.045,.355,1);
+      &:hover{
+          border-bottom: 1px solid $aqua;
+          transition: all 0.3s cubic-bezier(.645,.045,.355,1);
+      }
+  }
+}
+
+#menu-toggle {
+  @include object(55px,55px,darken($nav-bg,5%));
+  @include center;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  &:hover .bar {
+      width: 25px;
+  }
+  &.closeMenu {
+      .bar {
+          width: 25px;
+          &:first-child {
+              transform: translateY(7px) rotate(45deg);
+          }
+          &:nth-child(2) {
+              transform: scale(0);
+          }
+          &:last-child {
+              transform: translateY(-7px) rotate(-45deg);
+          }
+      }
+  }
+}
+
+.bar {
+  @include object(25px,2px,$accent);
+  transition: 0.3s ease-in-out;
+  &:nth-child(2) {
+      width: 20px;
+      margin: 5px 0;
+  }
+  &:last-child {
+      width: 15px;
+  }
+}
+
+/*** Hero Section Styles ***/
+#hero-section {
+  @include object(100vw,calc(100vh - 160px),null);
+  @include center;
+  flex-direction: column;
+  margin-top: 160px;
+  h1{
+      width: 70%;
+      text-align: center;
+  }
+  article{
+    width: 70%;
+    margin: 25px auto;
+    text-align: center;
+    p{
+        margin: 25px auto;
+        a{
+            color: #000;
+            font-weight: bold;
+        }
+    }
+  }
+  .header-catalog{
+    @include center;
+    div{
+        width: 30%;
+        display: flex;
+        align-items: center;
+        img, p{
+            margin: 10px;
+            color: $grey;
+        }
+    }
+  }
+}
+
+#head-line {
+  @include object(null,null,$accent);
+  position: relative;
+}
+
+/*** Section Styles ***/
+section {
+  @include object(100vw,null,null);
+  display: flex;
+  justify-content: center;
+}
+
+@import "howItWork";
+@import "persons";
+@import "courses";
+
+/*** footer style ***/
+
+@import "footer";
+
+
+/*** faq style ***/
+@import "faq";
+
+/*** Responsive Menu For Smaller Device ***/
+
+@media screen and (max-width: 767px) {
+  #menu-toggle {
+      display: flex;
+  }
+  #hero-section .header-catalog{
+      flex-direction: column;
+      div{
+          width: 90%;
+      }
+  }
+  #menu ul {
+      display: inline-block;
+      @include object(100vw,0,$nav-bg);
+      @include transPos(160px,null,null,null,null,null);
+      box-shadow: 0 5px 30px -4px rgba(#000, 0.2);
+      transition: all 0.3s;
+      &.showMenu {
+          height: 250px;
+          li {
+              height: 60px;
+              opacity: 1;
+              visibility: visible;
+          }
+      }
+  }
+  #menu li {
+      @include object(50%,80px,null);
+      float: left;
+      padding-left: 40px;
+      opacity: 0;
+      visibility: hidden;
+      margin-left: 0;
+      transition: all 0.3s 0.1s;
+      &:first-child,
+      &:nth-child(2) {
+          margin-top: 80px;
+      }
+  }
+  #head-line {
+      transform: scale(0.8);
+  }
+}
+
