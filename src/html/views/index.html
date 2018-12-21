@@ -194,4 +194,42 @@
   </article>
 </section>
 
+<section id="contacts">
+  <div class="leftCol">
+    <h3>Контакти</h3>
+    <label for="c1">Консультація и запис: </label>
+    <a id="c1" href="tel:+3800954887787">095-488-77-87</a>
+    <a id="c1" href="tel:+3800935040504">093-504-05-04</a>
+    <a href="tel:+380937484856">093-745-48-56</a>
+    <label for="c2">Наш e-mail: </label>
+    <a id="c2" href="mailto:english-courses@ck.ua">english-courses@ck.ua</a>
+    <label for="c3">Наші мережі: </label>
+    <a id="c3" href="https://web.facebook.com/">facebook.com</a>
+    <a id="c3" href="https://vk.com/">vk.com</a>
+    <label for="c4">Адреса: </label>
+    <a href="https://goo.gl/maps/XGfogezEdTS2">Школа №17 вулиця Хрещатик, 218, каб.№109б, Черкаси, Черкаська обл.</a>
+  </div>
+  <form id="contactForm" role="form">
+        <label class="sr-only" for="forName">Ваше Ім'я</label>
+        <input id="forName" class="emailAndName" type="text" name="name" placeholder="Ім'я" required>
+        <label class="sr-only" for="forEmail">Ваш E-mail</label>
+        <input id="forEmail" class="emailAndName" type="email" name="email" placeholder="E-mail" required>
+        <textarea id="forMessage" class="messageText" name="message" rows="7" placeholder="Ваше повідомлення" required></textarea>
+        <input class="submitButton" type="submit" name="submit" value="Відправити">
+        <div class="ajax-response"></div>
+  </form>
+  <div class="rightCol">
+      <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1090.7549494911864!2d32.06736139935356!3d49.4416686692337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d14b7d645de559%3A0x35af371997b9cc00!2zU2Nob29sIOKEljE3!5e0!3m2!1sru!2spl!4v1545397739327" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+</section>
+
+
+<!-- modal window for sent email -->
+<div id="modalWindow" class="flexCol">
+    <div id="animAccess" class="contentConfirm flexCol">
+        <span id="textConfirm">John, Hello</span>
+        <span id="closeConfirm">Ok</span>
+    </div>
+</div>
+
 <%= _.template(require('./../includes/footer.html'))(data) %>

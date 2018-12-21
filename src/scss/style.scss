@@ -3,11 +3,15 @@ $font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica 
 /*** Color Variables ***/
 $header-bg: #ffffff;
 $nav-bg: #ffffff;
-$aqua: #79edfc;
+$aqua: #70B6EA;
 $accent: #fff;
 $grey: rgb(87, 83, 83);
 $liteBg: #ecf7fb;
 $border-color: #e0e0e0;
+$main-bg: #ffffff;
+
+/*** styles ***/
+$box-shadow: 0 4px 30px -5px rgba(#000, 0.2);
 
 @font-face {
   font-family: "Roboto";
@@ -59,7 +63,7 @@ p{
 
 /*** Header Styles ***/
 header {
-  @include object(100vw,100vh,$header-bg);
+  @include object(100vw,null,$header-bg);
   display: flex;
 }
 
@@ -171,10 +175,11 @@ li {
 
 /*** Hero Section Styles ***/
 #hero-section {
-  @include object(100vw,calc(100vh - 160px),null);
+  @include object(100vw,null,null);
+  min-height: 100vh;
   @include center;
   flex-direction: column;
-  margin-top: 160px;
+  margin: 160px 0 0 0;
   h1{
       width: 70%;
       text-align: center;
@@ -220,11 +225,16 @@ section {
 @import "howItWork";
 @import "persons";
 @import "courses";
+@import "contact";
 
 /*** footer style ***/
 
 @import "footer";
 
+
+/*** modal style ***/
+
+@import "modal";
 
 /*** faq style ***/
 @import "faq";

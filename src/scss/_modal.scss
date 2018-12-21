@@ -1,0 +1,72 @@
+/*
+modal window for sent mail **start**
+ */
+.flexCol{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+#modalWindow{
+    background: rgba(44, 62, 80, 0.3);
+    box-sizing: border-box;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+}
+.contentConfirm{
+    box-sizing: border-box;
+    padding: 25px;
+    margin: auto;
+    width: 70%;
+    height: 40%;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: #d7d7d7;
+}
+
+#textConfirm{
+    font-size: 24px;
+    color: black;
+}
+
+#closeConfirm{
+    border: 2px solid #fff;
+    border-radius: 10%;
+    min-height: 50px;
+    min-width: 50px;
+    padding: 15px;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+#closeConfirm:hover{
+    border: 2px solid black;
+    color: #fff;
+}
+/*
+modal window for sent email  **end**
+ */
+.zoomOut{
+    animation-name: out;
+    animation-duration: 1s;
+}
+.zoomIn{
+    animation-name: in;
+    animation-duration: 1s;
+}
+@keyframes out {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }

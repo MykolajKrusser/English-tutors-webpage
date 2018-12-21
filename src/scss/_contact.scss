@@ -1,0 +1,105 @@
+#contacts{
+    @include center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    .leftCol{
+        @include center;
+        flex-direction: column;
+        width: 33.333%;
+        min-height: 100vh;
+        background: $aqua;
+        border: 1px solid $aqua;
+        box-shadow: $box-shadow;
+        text-align: center;
+        label{
+            color: $grey;
+            font-size: 18px;
+            margin: 15px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    form{
+        @include center;
+        flex-direction: column;
+        min-width: 33.333%;
+        min-height: 100vh;
+        padding: 35px 0;
+        box-shadow: $box-shadow;
+        z-index: 2;
+        label{
+            color: $grey;
+            font-size: 18px;
+            margin: 15px;
+        }
+        input{
+            width: 80%;
+            border: 1px solid $aqua;
+            border-radius: 30px;
+            height: 30px;
+            padding: 5px 35px;
+            outline: none;
+            transition: border 0.3s ease;
+            box-shadow: $box-shadow;
+            &:focus{
+                border: 3px solid $aqua;
+                transition: border 0.3s ease;
+            }
+        }
+        input[type=submit]{
+            background: $aqua;
+            border: 1px solid $aqua;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            &:hover{
+                background: rgba(121, 174, 253, 0.644);
+                transition: all 0.3s ease;
+            }
+        }
+        textarea{
+            width: 80%;
+            border: 1px solid $aqua;
+            border-radius: 30px;
+            margin: 25px 0;
+            padding: 5px 35px;
+            outline: none;
+            box-shadow: $box-shadow;
+            transition: all 0.3s ease;
+            &:focus{
+                border: 3px solid $aqua;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+    .rightCol{
+        min-width: 33.333%;
+        min-height: 100vh;
+        @include center;
+        justify-content: center;
+        #map{
+            width: 100%;
+            height: 100vh;
+        }
+    }
+}
+
+/*** Responsive Menu For Smaller Device ***/
+@media screen and (max-width: 1024px) {
+    #contacts .leftCol, .rightCol, form{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 767px) {
+    #contacts .leftCol, .rightCol, form{
+        width: 100%;
+    }
+}

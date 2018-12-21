@@ -6,6 +6,7 @@ footer{
     min-width: 100vw;
     background: #282828;
     color: white;
+    margin-top: 50px;
     a{
         color: #7E7E7E;
     }
@@ -14,7 +15,8 @@ footer{
         justify-content: space-around;
         width: 100%;
         border-bottom:1px solid #7E7E7E;
-        padding-bottom: 20px;
+        padding: 20px 0;
+        margin-bottom: 15px;
         div{
             flex-direction: column;
             @include center;
@@ -26,5 +28,10 @@ footer{
             }
         }
     }
-    
+}
+
+@media screen and (max-width: 767px) {
+    .info-footer{
+        flex-direction: column;
+    }
 }
