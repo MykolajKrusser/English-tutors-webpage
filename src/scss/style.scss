@@ -20,6 +20,7 @@ $box-shadow: 0 4px 30px -5px rgba(#000, 0.2);
   src: url(../fonts/Roboto-Regular.ttf);
 }
 
+
 /*** Mixins & Default Styles ***/
 @mixin object($width, $height, $bg) {
   width: $width;
@@ -43,12 +44,15 @@ $box-shadow: 0 4px 30px -5px rgba(#000, 0.2);
 body {
   overflow-x: hidden;
   overflow-y: scroll;
+  font-family: "Roboto";
+  font-style: normal;
 }
 h1,h2,h3{
     color: $grey;
     margin: 25px 0;
+    font-size: 26px;
 }
-p{
+p,input,textarea,label,a,span{
     font-size: 18px;
     line-height: 1.5;
     letter-spacing: 0.5px;
